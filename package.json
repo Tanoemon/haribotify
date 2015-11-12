@@ -1,0 +1,23 @@
+{
+  "name": "Haribotify",
+  "version": "0.0.0",
+  "description": "Merge files and require the merged file",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:nanila/haribotify.git"
+  },
+  "keywords": [
+    "browserify",
+    "html"
+  ],
+  "author": "nanila",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nanila/haribotify/issues"
+  },
+  "homepage": "https://github.com/nanila/haribotify"
+}
