@@ -1,10 +1,10 @@
 {
   "name": "Haribotify",
-  "version": "0.0.0",
-  "description": "Merge files and require the merged file",
+  "version": "0.0.1",
+  "description": "A Browserify transform which merges HTML files and require it",
   "main": "index.js",
   "scripts": {
-    "test": "tape test/*.js"
+    "test": "tape test/run.js"
   },
   "repository": {
     "type": "git",
@@ -12,12 +12,18 @@
   },
   "keywords": [
     "browserify",
-    "html"
+    "html",
+    "components"
   ],
   "author": "nanila",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/nanila/haribotify/issues"
   },
-  "homepage": "https://github.com/nanila/haribotify"
+  "homepage": "https://github.com/nanila/haribotify",
+  "devDependencies": {
+    "browserify": "^12.0.1",
+    "tape": "^4.2.2"
+  },
+  "dependencies": {}
 }
