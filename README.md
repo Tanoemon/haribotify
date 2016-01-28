@@ -33,7 +33,7 @@ var html = require('./html/base.html');
 ```
 
 Then the index.html is automatically transformed:
-#### ./html/index.html
+#### ./html/base.html
 ``` html
 <!DOCTYPE html>
 <html>
