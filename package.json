@@ -1,5 +1,5 @@
 {
-  "name": "Haribotify",
+  "name": "haribotify",
   "version": "0.0.1",
   "description": "A Browserify transform which merges HTML files and require it",
   "main": "index.js",
