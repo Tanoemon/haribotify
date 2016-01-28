@@ -32,7 +32,7 @@ Require html files:
 var html = require('./html/base.html');
 ```
 
-Then the index.html is automatically transformed:
+Then the base.html is automatically transformed:
 #### ./html/base.html
 ``` html
 <!DOCTYPE html>
