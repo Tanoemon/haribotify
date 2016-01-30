@@ -1,6 +1,6 @@
 {
   "name": "haribotify",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A Browserify transform which merges HTML files and require it",
   "main": "index.js",
   "scripts": {
