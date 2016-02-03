@@ -13,7 +13,8 @@
   "keywords": [
     "browserify",
     "html",
-    "components"
+    "components",
+    "browserify-transform"
   ],
   "author": "nanila",
   "license": "MIT",
