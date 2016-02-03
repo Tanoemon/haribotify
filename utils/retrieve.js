@@ -12,7 +12,7 @@ module.exports = function (baseFile) {
 function Base (baseFile) {
   this.content = fs.readFileSync(baseFile, 'utf8');
   this.baseDir = path.dirname(baseFile);
-  this.pathsRe = /\{{(.*?)\}}/g;
+  this.pathsRe = /{{(.*?)}}/g;
   this.completed = false;
 }
 
