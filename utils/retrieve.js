@@ -2,22 +2,22 @@ var fs = require('fs');
 var path = require('path');
 
 module.exports = function (baseFile, format) {
-  var base = new Base(baseFile);
-  if (format) base.format = format;
-  while (!base.completed) {
-    base.replace();
+  var source = new Source(baseFile);
+  if (format) source.format = format;
+  while (!source.completed) {
+    source.replace();
   }
-  return base.content;
+  return source.content;
 };
 
-function Base (baseFile) {
+function Source (baseFile) {
   this.content = fs.readFileSync(baseFile, 'utf8');
   this.baseDir = path.dirname(baseFile);
   this.format = /{{(.*?)}}/g;
   this.completed = false;
 }
 
-Base.prototype.replace = function () {
+Source.prototype.replace = function () {
   var draftList = [];
   var repPath = this.format.exec(this.content);
   if (repPath == null) {
