@@ -4,15 +4,16 @@ var Transform = require('stream').Transform,
   toJsString = require('./utils/toJsString');
 
 module.exports = function (filename, opts) {
-  return new Haribotify(filename);
+  return new Haribotify(filename, opts);
 };
 
 util.inherits(Haribotify, Transform);
 
-function Haribotify (filename) {
+function Haribotify (filename, opts) {
   Transform.call(this);
   this._filename = filename;
   this._data = '';
+  this._opts = opts;
 }
 
 Haribotify.prototype._transform = function (buf, enc, callback) {
@@ -27,7 +28,7 @@ Haribotify.prototype._flush = function (callback) {
     return;
   }
   try {
-    var text = retrieve(this._filename);
+    var text = retrieve(this._filename, this._opts.format);
     var jsText = toJsString(text);
     var result = 'module.exports = ' + jsText + ';'
     this.emit('haribotify', result);

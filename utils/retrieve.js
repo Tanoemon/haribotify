@@ -1,8 +1,9 @@
 var fs = require('fs');
 var path = require('path');
 
-module.exports = function (baseFile) {
+module.exports = function (baseFile, format) {
   var base = new Base(baseFile);
+  if (format) base.format = format;
   while (!base.completed) {
     base.replace();
   }
@@ -12,13 +13,13 @@ module.exports = function (baseFile) {
 function Base (baseFile) {
   this.content = fs.readFileSync(baseFile, 'utf8');
   this.baseDir = path.dirname(baseFile);
-  this.pathsRe = /{{(.*?)}}/g;
+  this.format = /{{(.*?)}}/g;
   this.completed = false;
 }
 
 Base.prototype.replace = function () {
   var draftList = [];
-  var repPath = this.pathsRe.exec(this.content);
+  var repPath = this.format.exec(this.content);
   if (repPath == null) {
     this.completed = true;
     return;
@@ -30,7 +31,7 @@ Base.prototype.replace = function () {
     draft.snippet = fs.readFileSync(repFullPath, 'utf8');
     draft.path = repPath[0];
     draftList.push(draft);
-    repPath = this.pathsRe.exec(this.content);
+    repPath = this.format.exec(this.content);
   }
 
   for (i = 0; i < draftList.length; i++) {
