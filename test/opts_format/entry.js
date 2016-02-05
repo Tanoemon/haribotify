@@ -1,0 +1,1 @@
+result = require('./data/base.html');
