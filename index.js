@@ -4,6 +4,7 @@ var Transform = require('stream').Transform,
   toJsString = require('./utils/toJsString');
 
 module.exports = function (filename, opts) {
+  Object.assign({}, opts);
   return new Haribotify(filename, opts);
 };
 
