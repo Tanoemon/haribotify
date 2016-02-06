@@ -67,3 +67,13 @@ to:
   </body>
 </html>
 ```
+
+### Options
+
+You can change the formatting rule of components paths. Its default is ```/{{(.*?)}}/g```
+
+``` javascript
+browserify().transform("haribotify", {
+  format: /regex/
+})
+```
